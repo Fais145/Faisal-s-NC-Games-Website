@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element = {<DisplayAllReviews/>}/>
-        <Route path='/Home' element = {<DisplayAllReviews/>}/>
+        <Route path='/home' element = {<DisplayAllReviews/>}/>
         {/* category drop list``
         on the left: checkbox ``
         on the right: display list name`` */}

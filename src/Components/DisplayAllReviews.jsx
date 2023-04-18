@@ -1,25 +1,24 @@
 import { useEffect, useState } from "react";
 // import { fetchReviews } from "../gamesAPI";
 import axios from "axios";
+import ReviewCard from "./ReviewCard";
 
 function DisplayAllReviews() {
   
-const [reviews,setReviews] = useState('')
+const [reviews,setReviews] = useState([])
 
  useEffect(()=>{
-    axios.get('http://faisals-nc-games.onrender.com/api/reviews').then((res)=>{
-        console.log(res.data.reviews)
-        // setReviews(res.data.reviews)
-    }).catch((err)=>{
-        console.log('err --->',err)
+    axios.get('https://faisals-nc-games.onrender.com/api/reviews').then((res)=>{
+        // console.log(res.data.reviews)
+        setReviews(res.data.reviews)
     })
  },[])
 
-//   return <div>
-//     {reviews.map((review)=>{
-//         return <p>{review.owner}</p>
-//     })}
-//   </div>;
+  return <div>
+    {reviews.map((review)=>{
+        return <ReviewCard key={review.review_id} review={review} />
+    })}
+  </div>;
 }
 
 export default DisplayAllReviews;
