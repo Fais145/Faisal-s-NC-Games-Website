@@ -1,15 +1,15 @@
 import { Routes,Route } from "react-router-dom";
 import "./App.css";
 import Header from "./Components/Header";
-// import DisplayAllReviews from "./Components/DisplayAllReviews";
+import DisplayAllReviews from "./Components/DisplayAllReviews";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
-        {/* <Route path='/' element = {<DisplayAllReviews/>}/> */}
-        {/* <Route path='/Home' element = {<DisplayAllReviews/>}/> */}
+        <Route path='/' element = {<DisplayAllReviews/>}/>
+        <Route path='/Home' element = {<DisplayAllReviews/>}/>
         {/* category drop list``
         on the left: checkbox ``
         on the right: display list name`` */}
