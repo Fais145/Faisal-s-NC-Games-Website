@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const gamesAPI = axios.create({
-    baseURL: 'http://faisals-nc-games.onrender.com/api'
+    baseURL: 'https://faisals-nc-games.onrender.com/api'
 })
 
 export const fetchReviews = async () => {

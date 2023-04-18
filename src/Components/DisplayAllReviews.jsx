@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
-// import { fetchReviews } from "../gamesAPI";
-import axios from "axios";
 import ReviewCard from "./ReviewCard";
+import { fetchReviews } from "../utils/gamesAPI";
+import Loading from "./Loading";
 
 function DisplayAllReviews() {
-  
+
+const [isLoading,setIsLoading] = useState(true)
 const [reviews,setReviews] = useState([])
 
  useEffect(()=>{
-    axios.get('https://faisals-nc-games.onrender.com/api/reviews').then((res)=>{
-        // console.log(res.data.reviews)
-        setReviews(res.data.reviews)
+    fetchReviews().then((res)=>{
+        setReviews(res.reviews)
+        setIsLoading(false)
     })
  },[])
+
+ if (isLoading) return <Loading />
 
   return <div>
     {reviews.map((review)=>{
