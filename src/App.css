@@ -117,9 +117,10 @@
 @media screen and (min-width: 768px) {
   .review-card {
     flex-direction: row;
+    justify-content: space-around;
     margin-left: 10%;
     margin-right: 10%;
-    /* margin-top: 3%; */
+    margin-top: 3%;
   }
   
   .review-card img {

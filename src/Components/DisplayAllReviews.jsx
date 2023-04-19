@@ -10,7 +10,7 @@ const [reviews,setReviews] = useState([])
 
  useEffect(()=>{
     fetchReviews().then((res)=>{
-        setReviews(res.reviews)
+        setReviews(res)
         setIsLoading(false)
     })
  },[])

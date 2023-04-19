@@ -6,5 +6,10 @@ const gamesAPI = axios.create({
 
 export const fetchReviews = async () => {
     const response = await gamesAPI.get('/reviews')
-    return response.data
+    return response.data.reviews
+}
+
+export const fetchReview = async (reviewID) => {
+    const response = await gamesAPI.get(`/reviews/${reviewID}`)
+    return response.data.review
 }
