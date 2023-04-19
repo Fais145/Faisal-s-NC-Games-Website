@@ -16,18 +16,18 @@ function DisplaySingleReview() {
   const { review_id } = useParams();
 
   useEffect(() => {
-    fetchReview(review_id).then((res) => {
-      setReview(res);
+    const fetchAll = async () => {
+      const fulfilledReview = await fetchReview(review_id);
+      const fulfilledComments = await fetchCommentsForReview(review_id);
+      const fulfilledUsers = await fetchAllUsers();
+
+      setReview(fulfilledReview);
       setIsLoading(false);
-    });
+      setComments(fulfilledComments);
+      setUsers(fulfilledUsers);
+    };
 
-    fetchCommentsForReview(review_id).then((res) => {
-      setComments(res);
-    });
-
-    fetchAllUsers().then((res) => {
-      setUsers(res);
-    });
+    fetchAll()
   }, []);
 
   if (isLoading) return <Loading />;
@@ -42,7 +42,9 @@ function DisplaySingleReview() {
       <h3>Comments:</h3>
       {comments.map((comment) => {
         const user = getUserByUsername(comment.author);
-        return <CommentCard key={comment.comment_id} comment={comment} user={user} />;
+        return (
+          <CommentCard key={comment.comment_id} comment={comment} user={user} />
+        );
       })}
     </div>
   );

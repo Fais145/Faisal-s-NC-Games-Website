@@ -1,7 +1,7 @@
 function CommentCard({ comment, user }) {
   const { body, author, votes, created_at } = comment;
   const { avatar_url } = user;
-  console.log(avatar_url);
+  
   return (
     <div className="comment-card">
       <p className="comment-body">{body}</p>
