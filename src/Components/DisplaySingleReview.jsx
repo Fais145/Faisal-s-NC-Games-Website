@@ -40,12 +40,14 @@ function DisplaySingleReview() {
     <div>
       <ReviewCard review={review} />
       <h3>Comments:</h3>
-      {comments.map((comment) => {
+      { comments.length !== 0 ? 
+      comments.map((comment) => {
         const user = getUserByUsername(comment.author);
         return (
           <CommentCard key={comment.comment_id} comment={comment} user={user} />
         );
-      })}
+      }) : 
+      <p>No comments yet! Be the first to make one...</p>}
     </div>
   );
 }
