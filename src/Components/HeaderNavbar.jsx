@@ -8,7 +8,7 @@ function HeaderNavbar() {
                 </Link>
                 </li>
             <li><a>Post review</a></li>
-            <li><a>Profile</a></li>
+            <li><a>Demo User</a></li>
           </ul>
     </nav>;
   }
