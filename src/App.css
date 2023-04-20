@@ -70,14 +70,31 @@
 .navbar a:hover {
   color: #666;
 }
+
+.review {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  max-width: 90%;
+}
 .review-card {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
 }
+.review-body {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 20px;
+  color: #333;
+  text-align: justify;
+  margin-top: 3.5%;
+  }
 
 .review-card img {
   width: 100%;
@@ -114,7 +131,27 @@
   margin-right: 10px;
 }
 
-@media screen and (min-width: 768px) {
+  
+  .review-body::first-letter {
+  font-size: 28px;
+  font-weight: bold;
+  float: left;
+  margin-right: 10px;
+  color: #cc7a00;
+  }
+  
+  .review-body a {
+  color: #0077cc;
+  text-decoration: none;
+  border-bottom: 1px solid #0077cc;
+  }
+  
+  .review-body a:hover {
+  background-color: #0077cc;
+  color: #fff;
+  }
+
+@media screen and (min-width: 900px) {
   .review-card {
     flex-direction: row;
     justify-content: space-around;
@@ -134,6 +171,61 @@
 .Loading {
   align-items: center;
   padding-top: 20%;
+}
+
+.vote-buttons {
+  display: flex;
+  justify-content:center;
+  border-color: rgb(19, 21, 19);
+  align-items: center;
+  margin-top: 10px;
+}
+
+.upvote-button,
+.downvote-button {
+  background-color: rgb(39, 142, 151);
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid cyan;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: medium;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  height: 4vh;
+}
+
+.upvote-button {
+  margin-right: 5px;
+}
+
+.downvote-button {
+  margin-left: 5px;
+}
+.upvote-button:hover {
+  border-color: rgb(19, 21, 19);
+  transform: scale(1.1);
+}
+
+.downvote-button:hover {
+  border-color: rgb(19, 21, 19);
+  transform: scale(1.1);
+}
+
+.liked{
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: green;
+  border-color: black;
+}
+
+.disliked{
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: red;
+  border-color: black;
 }
 
 .comment-card {
@@ -215,3 +307,4 @@
     margin-top: 5px;
   }
 }
+
