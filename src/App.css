@@ -191,7 +191,10 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   font-size: medium;
-  margin-top: 10px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  height: 6vh;
 }
 
 .upvote-button {
@@ -202,15 +205,24 @@
   margin-left: 5px;
 }
 .upvote-button:hover {
-  background-color: rgb(162, 114, 19);
   border-color: rgb(19, 21, 19);
   transform: scale(1.1);
 }
 
 .downvote-button:hover {
-  background-color: rgb(167, 41, 9);
   border-color: rgb(19, 21, 19);
   transform: scale(1.1);
 }
 
+.voted-up{
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: green;
+}
+
+.voted-down{
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: red;
+}
 
