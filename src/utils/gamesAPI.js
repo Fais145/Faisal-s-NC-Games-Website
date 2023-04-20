@@ -19,3 +19,13 @@ export const patchReview = async (vote,reviewID) => {
 
     return response.data
 }
+
+export const fetchCommentsForReview = async (reviewID) => {
+    const response = await gamesAPI.get(`/reviews/${reviewID}/comments`)
+    return response.data.comments
+}
+
+export const fetchAllUsers = async () => {
+    const response = await gamesAPI.get('/users')
+    return response.data.users
+}
