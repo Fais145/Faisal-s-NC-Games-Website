@@ -13,3 +13,13 @@ export const fetchReview = async (reviewID) => {
     const response = await gamesAPI.get(`/reviews/${reviewID}`)
     return response.data.review
 }
+
+export const fetchCommentsForReview = async (reviewID) => {
+    const response = await gamesAPI.get(`/reviews/${reviewID}/comments`)
+    return response.data.comments
+}
+
+export const fetchAllUsers = async () => {
+    const response = await gamesAPI.get('/users')
+    return response.data.users
+}
