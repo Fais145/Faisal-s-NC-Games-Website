@@ -1,12 +1,12 @@
 import HeaderLogo from "./HeaderLogo"
 import HeaderNavbar from "./HeaderNavbar"
 
-function Header() {
+function Header({loggedInUser,setLoggedInUser}) {
   return (
     <header className="header">
       <HeaderLogo className="logo"/>
       <h1 className="MAINtitle">Game Critic</h1>   
-      <HeaderNavbar/>     
+      <HeaderNavbar loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}/>     
     </header>
   )
 }

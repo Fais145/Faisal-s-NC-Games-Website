@@ -29,3 +29,4 @@ export const fetchAllUsers = async () => {
     const response = await gamesAPI.get('/users')
     return response.data.users
 }
+
