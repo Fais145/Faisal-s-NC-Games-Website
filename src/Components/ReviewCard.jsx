@@ -12,7 +12,7 @@ function ReviewCard({ review }) {
   } = review;
 
   const body = review.review_body ? review.review_body : null;
-
+  // this checks if we are rendering all reviews on main page or a single review id with a review body
   const handleUpvote = () => {};
 
   const handleDownvote = () => {};
@@ -36,6 +36,7 @@ function ReviewCard({ review }) {
               Votes: {votes} | Comments: {comment_count}
             </p>
           </div>
+        </div>
           <div className="vote-buttons">
             <button className="upvote-button" onClick={handleUpvote}>
               Upvote
@@ -44,7 +45,6 @@ function ReviewCard({ review }) {
               Downvote
             </button>
           </div>
-        </div>
           {body ? <p className="review-body">{body}</p> : null}
       </div>
     </>
