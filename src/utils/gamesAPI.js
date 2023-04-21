@@ -30,3 +30,8 @@ export const fetchAllUsers = async () => {
     return response.data.users
 }
 
+export const postCommentOnReview = async (reviewID,username,comment) => {
+    const response = await gamesAPI.post(`/reviews/${reviewID}/comments`,{"username": username, "body": comment})
+    return response.data.comment
+}
+

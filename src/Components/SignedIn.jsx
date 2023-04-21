@@ -13,4 +13,5 @@ function SignedIn({loggedInUser}) {
   )
 }
 
-export default SignedIn
+export default SignedIn;
+

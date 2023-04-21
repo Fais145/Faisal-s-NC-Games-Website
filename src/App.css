@@ -464,3 +464,9 @@
   justify-content: center;
   height: 40vh;
 }
+
+.comment-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

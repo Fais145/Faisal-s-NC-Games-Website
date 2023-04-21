@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import {
-  // fetchAllUsers,
   fetchCommentsForReview,
   fetchReview,
 } from "../utils/gamesAPI";
@@ -8,23 +7,23 @@ import { useParams } from "react-router-dom";
 import Loading from "./Loading";
 import ReviewCard from "./ReviewCard";
 import CommentCard from "./CommentCard";
-function DisplaySingleReview({users}) {
+import PostComment from "./PostComment";
+
+
+function DisplaySingleReview({users, loggedInUser}) {
   const [isLoading, setIsLoading] = useState(true);
   const [review, setReview] = useState({});
   const [comments, setComments] = useState([]);
-  // const [users, setUsers] = useState([]);
   const { review_id } = useParams();
 
   useEffect(() => {
     const fetchAll = async () => {
       const fulfilledReview = await fetchReview(review_id);
       const fulfilledComments = await fetchCommentsForReview(review_id);
-      // const fulfilledUsers = await fetchAllUsers();
 
       setReview(fulfilledReview);
       setIsLoading(false);
       setComments(fulfilledComments);
-      // setUsers(fulfilledUsers);
     };
 
     fetchAll()
@@ -39,6 +38,7 @@ function DisplaySingleReview({users}) {
   return (
     <div>
       <ReviewCard review={review} />
+      <PostComment loggedInUser={loggedInUser} review_id={review_id} setComments={setComments}/>
       <h3>Comments:</h3>
       { comments.length !== 0 ? 
       comments.map((comment) => {

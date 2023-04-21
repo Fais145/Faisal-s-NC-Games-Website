@@ -47,8 +47,10 @@ function HeaderNavbar({ loggedInUser, setLoggedInUser }) {
               </div>
               {showDropdown &&
                 <div className="dropdown-menu">
-                  <div className="dropdown-item">About me</div>
+                  {/* <div className="dropdown-item">About me</div> */}
+                  <Link to={'/Home'}>
                   <div className="dropdown-item" onClick={handleSignOut}>Sign Out</div>
+                  </Link>
                 </div>
               }
             </div>
