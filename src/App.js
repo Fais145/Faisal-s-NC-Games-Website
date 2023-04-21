@@ -6,6 +6,7 @@ import DisplaySingleReview from "./Components/DisplaySingleReview";
 import { useEffect, useState } from "react";
 import DisplayAllUsers from "./Components/DisplayAllUsers";
 import { fetchAllUsers } from "./utils/gamesAPI";
+import SignedIn from "./Components/SignedIn";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/Home' element = {<DisplayAllReviews/>}/>
         <Route path='/reviews/:review_id' element = {<DisplaySingleReview users={users}/>}/>
         <Route path='/signIn' element = {<DisplayAllUsers users ={users} setLoggedInUser={setLoggedInUser}/>}/>
+        <Route path='/signedIn' element = {<SignedIn loggedInUser={loggedInUser}/> } />
         {/* category drop list``
         on the left: checkbox ``
         on the right: display list name`` */}

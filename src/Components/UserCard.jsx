@@ -1,15 +1,19 @@
+import { Link } from 'react-router-dom';
+
 function UserCard({user,setLoggedInUser}) {
     const chooseUser = () => {
         setLoggedInUser(user)
+
     }
 
     return (
-      <div className="user-card-container" onClick={chooseUser}>
-        <div className="user-card">
+      <div className="user-card-container">
+        <Link to={'/SignedIn'}>
+        <div className="user-card" onClick={chooseUser}>
           <img src={user.avatar_url} alt={`${user.username} profile picture`} />
-          <h3>{user.name}</h3>
-          <p>{user.username}</p>
+          <h3>{user.username}</h3>
         </div>
+        </Link>
       </div>
     );
   }
