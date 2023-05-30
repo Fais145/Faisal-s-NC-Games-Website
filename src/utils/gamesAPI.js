@@ -4,8 +4,9 @@ const gamesAPI = axios.create({
     baseURL: 'https://faisals-nc-games.onrender.com/api'
 })
 
-export const fetchReviews = async () => {
-    const response = await gamesAPI.get('/reviews')
+export const fetchReviews = async (category) => {
+    const url = category ? `/reviews?category=${category}` : '/reviews'
+    const response = await gamesAPI.get(url)
     return response.data.reviews
 }
 
