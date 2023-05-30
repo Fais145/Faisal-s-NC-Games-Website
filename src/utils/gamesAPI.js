@@ -36,3 +36,8 @@ export const postCommentOnReview = async (reviewID,username,comment) => {
     return response.data.comment
 }
 
+export const fetchCategories = async () => {
+    const response = await gamesAPI.get('/categories')
+    return response.data.categories
+}
+
