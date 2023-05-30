@@ -29,6 +29,7 @@ function App() {
         {/* category drop list``
         on the left: checkbox ``
         on the right: display list name`` */}
+        <Route path ='/Home/:category' element={<DisplayAllReviews/>}/>
       </Routes>
     </div>
   );
