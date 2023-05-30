@@ -25,13 +25,15 @@ function DisplayAllReviews() {
 
   return (
     <div>
-      <div>
+      <div class="category-buttons">
         {categories.map((cat) => (
           <Link to={`/Home/${cat.slug}`} key={cat.slug}>
-            <button>{cat.slug}</button>
+            <button class="category-button">
+              {cat.slug}
+              </button>
           </Link>
         ))}
-      </div>
+      </div> 
       {reviews.map((review) => (
         <ReviewCard key={review.review_id} review={review} />
       ))}
