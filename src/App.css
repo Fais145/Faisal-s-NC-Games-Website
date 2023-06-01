@@ -182,10 +182,6 @@ a:active {
   color: whitesmoke;
 }
 
-/* .category-container {
-  display: flex;
-} */
-
 .subheader {
   align-items: center;
   margin-top: 3%;
@@ -244,6 +240,26 @@ a:active {
       width: 100%; /* Make buttons full width on small screens */
     }
   }
+
+
+.query-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.2em;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.query-container label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.query-container select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
 .review {
   display: flex;
