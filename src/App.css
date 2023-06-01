@@ -261,6 +261,21 @@ a:active {
   border-radius: 4px;
 }
 
+@media (max-width: 768px) {
+  .query-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .query-container label {
+    margin-bottom: 10px;
+  }
+  
+  .query-container select {
+    width: 100%;
+  }
+}
+
 .review {
   display: flex;
   flex-direction: column;
