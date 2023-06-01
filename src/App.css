@@ -179,8 +179,31 @@
   display: flex;
 } */
 
+.subheader {
+  align-items: center;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .subheader {
+    flex-direction: column;
+  }
+
+  .subheader-start {
+    flex-basis: auto;
+  }
+}
+
+.category {
+  margin: 0;
+  text-decoration: underline;
+  color: green;
+}
+
 .category-buttons {
-  margin-top: 5%;
+  margin-top: 2%;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
