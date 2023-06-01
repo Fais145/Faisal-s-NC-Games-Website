@@ -4,11 +4,24 @@ const gamesAPI = axios.create({
     baseURL: 'https://faisals-nc-games.onrender.com/api'
 })
 
-export const fetchReviews = async (category) => {
-    const url = category ? `/reviews?category=${category}` : '/reviews'
+export const fetchReviews = async (category, sort_by, order) => {
+    let url = '/reviews'
+  
+    if (category) {
+      url += url==='/reviews' ? `?category=${category}` : `&category=${category}`
+    }
+    
+    if (sort_by) {
+        url += url==='/reviews' ? `?sort_by=${sort_by}` : `&sort_by=${sort_by}`
+      }
+  
+      if (order) {
+        url += url==='/reviews' ? `?order=${order}` : `&order=${order}`
+      }
+    
     const response = await gamesAPI.get(url)
     return response.data.reviews
-}
+  }
 
 export const fetchReview = async (reviewID) => {
     const response = await gamesAPI.get(`/reviews/${reviewID}`)
