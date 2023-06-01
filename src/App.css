@@ -175,6 +175,69 @@
   color: whitesmoke;
 }
 
+/* .category-container {
+  display: flex;
+} */
+
+.subheader {
+  align-items: center;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .subheader {
+    flex-direction: column;
+  }
+
+  .subheader-start {
+    flex-basis: auto;
+  }
+}
+
+.category {
+  margin: 0;
+  text-decoration: underline;
+  color: green;
+}
+
+.category-buttons {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  align-items: center;
+  gap:10px
+}
+
+.category-button {
+  background-color: #4a4a4a;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-button:hover {
+  background-color: #385898;
+}
+
+  @media (max-width: 768px) {
+    .category-buttons {
+      flex-wrap: wrap; /* Allow the buttons to wrap onto multiple lines */
+      justify-content: center; /* Align buttons to the start of the flex container */
+    }
+
+    .category-button {
+      margin-bottom: 10px; /* Add some bottom margin between the buttons */
+      width: 100%; /* Make buttons full width on small screens */
+    }
+  }
+
 .review {
   display: flex;
   flex-direction: column;
@@ -187,6 +250,7 @@
   margin-top: 30px;
   max-width: 90%;
 }
+
 .review-card {
   display: flex;
   flex-direction: column;
@@ -287,7 +351,7 @@
 
 .upvote-button,
 .downvote-button {
-  background-color: rgb(39, 142, 151);
+  background-color: #385898;
   color: white;
   padding: 10px 20px;
   border: 2px solid cyan;
