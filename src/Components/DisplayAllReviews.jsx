@@ -10,19 +10,28 @@ function DisplayAllReviews() {
   const [isLoading, setIsLoading] = useState(true);
   const [reviews, setReviews] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [randomColor, setRandomColor] = useState('');
+  const [sortOption, setSortOption] = useState("created_at");
+  const [orderOption, setOrderOption] = useState("desc")
 
   useEffect(() => {
-    Promise.all([fetchReviews(category), fetchCategories()]).then(
+    Promise.all([fetchReviews(category,sortOption,orderOption), fetchCategories()]).then(
       ([reviewsRes, categoriesRes]) => {
         setReviews(reviewsRes);
         setCategories(categoriesRes);
         setIsLoading(false);
       }
     );
-  }, [category]);
+  }, [category, sortOption, orderOption]);
 
   if (isLoading) return <Loading />;
+
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
+  };
+
+  const handleOrderChange = (e) => {
+    setOrderOption(e.target.value);
+  };
 
   return (
     <div>
@@ -42,6 +51,19 @@ function DisplayAllReviews() {
               </button>
           </Link>
         ))}
+      </div>
+      <div className="query-container">
+        <label htmlFor="sort-select">Sort by:</label>
+        <select id="sort-select" value={sortOption} onChange={handleSortChange}>
+          <option value="created_at">Date</option>
+          <option value="comment_count">Comment Count</option>
+          <option value="votes">Votes</option>
+        </select>
+        <label htmlFor="order-select">Order by:</label>
+        <select id="order-select" value={orderOption} onChange={handleOrderChange}>
+          <option value="desc">Descending</option>
+          <option value="asc">Ascending</option>
+        </select>
       </div> 
       {reviews.map((review) => (
         <ReviewCard key={review.review_id} review={review} />
