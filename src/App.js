@@ -26,9 +26,6 @@ function App() {
         <Route path='/reviews/:review_id' element = {<DisplaySingleReview users={users} loggedInUser={loggedInUser}/>}/>
         <Route path='/signIn' element = {<DisplayAllUsers users ={users} setLoggedInUser={setLoggedInUser}/>}/>
         <Route path='/signedIn' element = {<SignedIn loggedInUser={loggedInUser}/> } />
-        {/* category drop list``
-        on the left: checkbox ``
-        on the right: display list name`` */}
         <Route path ='/Home/:category' element={<DisplayAllReviews/>}/>
       </Routes>
     </div>
