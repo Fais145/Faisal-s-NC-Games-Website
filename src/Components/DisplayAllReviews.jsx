@@ -43,10 +43,10 @@ function DisplayAllReviews() {
            {category.toUpperCase()} 
         </h2> : <h2 className="category"> EVERYTHING</h2>}
       </div>
-      <div class="category-buttons">
+      <div className="category-buttons">
         {categories.map((cat) => (
           <Link to={`/Home/${cat.slug}`} key={cat.slug}>
-            <button class="category-button">
+            <button className="category-button">
               {cat.slug}
               </button>
           </Link>
