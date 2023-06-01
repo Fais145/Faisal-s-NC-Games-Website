@@ -13,9 +13,19 @@ function App() {
   const [loggedInUser,setLoggedInUser]= useState({})
   const [users, setUsers] = useState([]);
 
-  useEffect(()=> 
-    fetchAllUsers().then((res)=>{setUsers(res)})
-  ,[])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetchAllUsers();
+        setUsers(res);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  
 
   return (
     <div className="App">
